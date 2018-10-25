@@ -28,29 +28,44 @@ while Query != 'exit()':
     if Query == 'Currency':
         from work2 import USDtoZMW, GBPtoZMW
 
+        def CurrencyConvertor(Currency, ExRate):
+            Currency = Currency /  ExRate
+            Currency = float(round(Currency, 2))
+
+            return Currency
+
+        def CurrencyConvertorB(Currency, ExRate):
+            Currency = Currency *  ExRate
+            Currency = float(round(Currency, 2))
+
+            return Currency
+
         Query2 = input("Enter the Currency You're Converting from ")
 
         if Query2 == 'K':
-            Currency1 = float(input('Enter the amount in K: '))
-            Cur1 = Currency1
-            Currency1 = Currency1 / USDtoZMW
-            Currency1a = Cur1 / GBPtoZMW
-            Currency1 = float(round(Currency1, 2))
-            Currency1a = float(round(Currency1a, 2))
-            print('$', Currency1)
-            print('GBP', Currency1a)
+            ExRate = USDtoZMW
+            Currency = float(input('Enter Amount in Kwacha '))
+
+            print('$ ', CurrencyConvertor(Currency, ExRate))
+
+            ExRate = GBPtoZMW
+
+            print('£ ', CurrencyConvertor(Currency, ExRate))
+            
 
         if Query2 == '$':
-            Currency2 = float(input('Enter the amount in $: '))
-            Currency2 = Currency2 * USDtoZMW
-            Currency2 = float(round(Currency2, 2))
-            print('K', Currency2)
+            ExRate = USDtoZMW
+            Currency = float(input('Enter Amount in Dollers '))
+
+            print('K ', CurrencyConvertorB(Currency, ExRate))
+
 
         if Query2 == 'GBP':
-            Currency3 = float(input('Enter the amount in GBP: '))
-            Currency3 = Currency3 * GBPtoZMW
-            Currency3 = float(round(Currency3, 2))
-            print('K', Currency3)
+            ExRate = GBPtoZMW
+            Currency = float(input('Enter Amount in £'))
+
+            print('K ', CurrencyConvertorB(Currency, ExRate))
+            
 
         if Query2 == 'all':
             CurrencyAll = float(input('Enter the Amount'))
@@ -59,8 +74,8 @@ while Query != 'exit()':
 
 
 
-# def CurrencyConvertor(Currency, USDtoZMW, GBPtoZMW):
-#     Currency = float(input('Enter the amount '))   
+
+  
 
     
 
