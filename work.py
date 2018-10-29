@@ -55,7 +55,7 @@ while Query != 'exit()':
 
         if Query2 == '$':
             ExRate = USDtoZMW
-            Currency = float(input('Enter Amount in Dollers '))
+            Currency = float(input('Enter Amount in Dollars '))
 
             print('K ', CurrencyConvertorB(Currency, ExRate))
 
